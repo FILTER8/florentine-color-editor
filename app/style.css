@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: #101010;
+  color: #f8f0df;
+  font-family: 'Press Start 2P', monospace;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+main {
+  width: min(1100px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr repeat(6, auto);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+input,
+button {
+  border: 4px solid #3a3328;
+  background: #181818;
+  color: #f8f0df;
+  padding: 14px;
+  font-size: 10px;
+  image-rendering: pixelated;
+  border-radius: 0;
+}
+
+button {
+  cursor: pointer;
+  background: #2b261d;
+}
+
+button:hover:not(:disabled) {
+  background: #3a3328;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.error {
+  border: 4px solid #702020;
+  background: #2a0a0a;
+  padding: 16px;
+  color: #ffb0b0;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.stage {
+  border: 4px solid #3a3328;
+  background: #181818;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+canvas {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: block;
+  border: 4px solid #000;
+  background: #000;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.caption {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.paletteGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.paletteStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 34px;
+  padding: 0;
+  border: 4px solid #28231b;
+  overflow: hidden;
+}
+
+.paletteStrip span {
+  display: block;
+  height: 100%;
+}
+
+.paletteStrip.active {
+  border-color: #f8f0df;
+}
+
+.currentMap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.mapItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 32px;
+  border: 4px solid #28231b;
+}
+
+.mapItem span {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .topbar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topbar input {
+    grid-column: span 2;
+  }
+
+  .paletteGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+}
