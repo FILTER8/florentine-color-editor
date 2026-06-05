@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "^15",
+    "next": "^16.2.7",
     "react": "^19",
     "react-dom": "^19",
     "viem": "^2"
